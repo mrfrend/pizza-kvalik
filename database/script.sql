@@ -146,6 +146,7 @@ INSERT INTO special_offers (name, description, discount_percentage, valid_from, 
 DELIMITER $$
 CREATE FUNCTION get_order_sum(p_order_id INT)
 RETURNS DECIMAL(10, 2)
+DETERMINISTIC
 BEGIN
     DECLARE sum_order DECIMAL(10, 2) DEFAULT 0;
     SET sum_order = (
@@ -159,7 +160,7 @@ BEGIN
 
 END $$
 
-DELIMITER;
+DELIMITER ;
 
 
 CREATE VIEW order_stats AS
