@@ -9,6 +9,7 @@ class OrderItem(QWidget, Ui_Form):
         self.setupUi(self)
         self.product = product
         self.count = count
+        self.amountBox.valueChanged.connect(self.change_price)
 
          
         text = self.product["name"]
@@ -18,4 +19,9 @@ class OrderItem(QWidget, Ui_Form):
         self.image.setPixmap(pixmap)
         self.item_name.setText(text)
         self.amountBox.setValue(count)
-        self.price_label.setText(str(self.product['price']))
+        self.price_label.setText(str(self.product['price'] * count))
+    
+    def change_price(self):
+        self.count = self.amountBox.value()
+        self.price_label.setText(str(self.product['price'] * self.count))
+

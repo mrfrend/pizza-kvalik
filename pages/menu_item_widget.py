@@ -12,6 +12,7 @@ class MenuItem(QWidget, Ui_Form):
         self.setupUi(self)
         self.product = product
         print(f"{self.product=}")
+        self.name = 'Ivan'
         
         text = self.product["name"]
         image_path = "Pizza/" + self.product['image']
@@ -23,3 +24,5 @@ class MenuItem(QWidget, Ui_Form):
     
     def mouseDoubleClickEvent(self, a0: QMouseEvent | None) -> None:
         self.double_clicked.emit(self.product)
+    
+    

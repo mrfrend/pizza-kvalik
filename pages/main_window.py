@@ -1,6 +1,7 @@
 from py_ui.main_window import Ui_Form
-from PyQt6.QtWidgets import QWidget, QApplication, QInputDialog
+from PyQt6.QtWidgets import QWidget, QApplication, QInputDialog, QMessageBox
 from PyQt6.QtGui import QMouseEvent
+import pymysql
 from database.db import dao
 from .menu_item_widget import MenuItem
 from .order_item_widget import OrderItem
@@ -12,6 +13,7 @@ class MainWindow(QWidget, Ui_Form):
         self.setWindowTitle("Главное окно")
         self.user = user
         print(self.user)
+        self.order_items: list[MenuItem] = []
 
         if self.user is None or self.user["role_id"] == 2:
             self.admin_panel.deleteLater()
@@ -21,7 +23,24 @@ class MainWindow(QWidget, Ui_Form):
         if self.user is None:
             self.tabWidget.setTabVisible(2, False)
         
+        self.pushButton_2.clicked.connect(self.apply_order)
+        
         self.load_menu()
+    
+    def apply_order(self):
+        try:
+            dao.create_order(self.user['user_id'], self.order_items)
+
+            while self.order_layout.count():
+                widget = self.order_layout.takeAt(0).widget()
+                if widget is not None:
+                    widget.deleteLater()
+            self.order_items = []
+            
+            QMessageBox.information(self, "Успех", "Ваш заказ оформлен!")
+
+        except pymysql.err.Error as e:
+            QMessageBox.critical(self, "Ошибка", str(e))
 
     def load_menu(self):
         menu_items = dao.get_menu()
@@ -34,10 +53,13 @@ class MainWindow(QWidget, Ui_Form):
     
     def add_item_to_order(self, product):
         value, ok = QInputDialog.getInt(self, "Ввод количества блюда", "Количество", 1, 1, 10, 1)
-
+        
         if ok:
             order_item = OrderItem(product, value)
             self.order_layout.addWidget(order_item)
+            self.order_items.append(order_item)
+            self.pushButton_2.setEnabled(len(self.order_layout) > 0)
+        
 
 if __name__ == '__main__':
     app = QApplication([])
