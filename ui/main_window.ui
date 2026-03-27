@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>601</width>
-    <height>474</height>
+    <height>663</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -64,7 +64,7 @@
               <x>0</x>
               <y>0</y>
               <width>555</width>
-              <height>299</height>
+              <height>488</height>
              </rect>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -189,7 +189,7 @@
             <x>0</x>
             <y>0</y>
             <width>557</width>
-            <height>329</height>
+            <height>265</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -252,10 +252,25 @@ color: #fff</string>
         </layout>
        </item>
        <item>
-        <widget class="QLabel" name="status_label">
-         <property name="text">
-          <string>Cтатус заказа:</string>
+        <widget class="QScrollArea" name="scrollArea_3">
+         <property name="widgetResizable">
+          <bool>true</bool>
          </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents_3">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>557</width>
+            <height>264</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_8">
+           <item>
+            <layout class="QVBoxLayout" name="orders_layout"/>
+           </item>
+          </layout>
+         </widget>
         </widget>
        </item>
       </layout>

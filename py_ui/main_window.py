@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'ui/main_window.ui'
+# Form implementation generated from reading ui file '.\ui\main_window.ui'
 #
 # Created by: PyQt6 UI code generator 6.10.2
 #
@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(601, 474)
+        Form.resize(601, 663)
         self.verticalLayout = QtWidgets.QVBoxLayout(Form)
         self.verticalLayout.setObjectName("verticalLayout")
         self.tabWidget = QtWidgets.QTabWidget(parent=Form)
@@ -37,7 +37,7 @@ class Ui_Form(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 555, 299))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 555, 488))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_4.setObjectName("verticalLayout_4")
@@ -113,7 +113,7 @@ class Ui_Form(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollArea_2.setObjectName("scrollArea_2")
         self.scrollAreaWidgetContents_2 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 557, 329))
+        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 557, 265))
         self.scrollAreaWidgetContents_2.setObjectName("scrollAreaWidgetContents_2")
         self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_5.setObjectName("verticalLayout_5")
@@ -139,9 +139,19 @@ class Ui_Form(object):
         self.pushButton_2.setObjectName("pushButton_2")
         self.order_buttons_layout.addWidget(self.pushButton_2)
         self.verticalLayout_2.addLayout(self.order_buttons_layout)
-        self.status_label = QtWidgets.QLabel(parent=self.client_orders)
-        self.status_label.setObjectName("status_label")
-        self.verticalLayout_2.addWidget(self.status_label)
+        self.scrollArea_3 = QtWidgets.QScrollArea(parent=self.client_orders)
+        self.scrollArea_3.setWidgetResizable(True)
+        self.scrollArea_3.setObjectName("scrollArea_3")
+        self.scrollAreaWidgetContents_3 = QtWidgets.QWidget()
+        self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 557, 264))
+        self.scrollAreaWidgetContents_3.setObjectName("scrollAreaWidgetContents_3")
+        self.verticalLayout_8 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_3)
+        self.verticalLayout_8.setObjectName("verticalLayout_8")
+        self.orders_layout = QtWidgets.QVBoxLayout()
+        self.orders_layout.setObjectName("orders_layout")
+        self.verticalLayout_8.addLayout(self.orders_layout)
+        self.scrollArea_3.setWidget(self.scrollAreaWidgetContents_3)
+        self.verticalLayout_2.addWidget(self.scrollArea_3)
         self.tabWidget.addTab(self.client_orders, "")
         self.reports = QtWidgets.QWidget()
         self.reports.setObjectName("reports")
@@ -168,6 +178,5 @@ class Ui_Form(object):
         self.label.setText(_translate("Form", "Мой заказ"))
         self.pushButton.setText(_translate("Form", "Редактировать заказ"))
         self.pushButton_2.setText(_translate("Form", "Оформить заказ"))
-        self.status_label.setText(_translate("Form", "Cтатус заказа:"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.client_orders), _translate("Form", "Мои заказы"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.reports), _translate("Form", "Отчёты"))

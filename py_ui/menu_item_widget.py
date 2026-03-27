@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'ui/menu_item_widget.ui'
+# Form implementation generated from reading ui file '.\ui\menu_item_widget.ui'
 #
 # Created by: PyQt6 UI code generator 6.10.2
 #

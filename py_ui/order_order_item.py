@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file '.\ui\order_item_widget.ui'
+# Form implementation generated from reading ui file '.\ui\order_order_item.ui'
 #
 # Created by: PyQt6 UI code generator 6.10.2
 #
@@ -12,27 +12,28 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(480, 150)
+        Form.resize(548, 150)
         Form.setMinimumSize(QtCore.QSize(0, 150))
         Form.setMaximumSize(QtCore.QSize(16777215, 150))
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(Form)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.image = QtWidgets.QLabel(parent=Form)
-        self.image.setObjectName("image")
-        self.horizontalLayout.addWidget(self.image)
-        self.item_name = QtWidgets.QLabel(parent=Form)
-        self.item_name.setObjectName("item_name")
-        self.horizontalLayout.addWidget(self.item_name)
-        self.amountBox = QtWidgets.QSpinBox(parent=Form)
-        self.amountBox.setObjectName("amountBox")
-        self.horizontalLayout.addWidget(self.amountBox)
+        self.order_id = QtWidgets.QLabel(parent=Form)
+        self.order_id.setObjectName("order_id")
+        self.horizontalLayout.addWidget(self.order_id)
+        self.composition = QtWidgets.QLabel(parent=Form)
+        self.composition.setObjectName("composition")
+        self.horizontalLayout.addWidget(self.composition)
         self.price_label = QtWidgets.QLabel(parent=Form)
         self.price_label.setObjectName("price_label")
         self.horizontalLayout.addWidget(self.price_label)
+        self.status = QtWidgets.QLabel(parent=Form)
+        self.status.setObjectName("status")
+        self.horizontalLayout.addWidget(self.status)
         self.horizontalLayout.setStretch(0, 1)
         self.horizontalLayout.setStretch(1, 2)
+        self.horizontalLayout.setStretch(2, 1)
         self.horizontalLayout.setStretch(3, 1)
         self.verticalLayout_2.addLayout(self.horizontalLayout)
 
@@ -42,6 +43,7 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.image.setText(_translate("Form", "Image"))
-        self.item_name.setText(_translate("Form", "TextLabel"))
-        self.price_label.setText(_translate("Form", "TextLabel"))
+        self.order_id.setText(_translate("Form", "Order_id"))
+        self.composition.setText(_translate("Form", "Composition"))
+        self.price_label.setText(_translate("Form", "total_price"))
+        self.status.setText(_translate("Form", "status"))
