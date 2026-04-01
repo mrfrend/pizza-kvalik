@@ -43,13 +43,14 @@ CREATE TABLE menu_items (
     name VARCHAR(100) NOT NULL,
     description TEXT,
     price DECIMAL(10,2) NOT NULL,
-    category VARCHAR(50) NOT NULL
+    category VARCHAR(50) NOT NULL,
+    image VARCHAR(255) NULL
 );
 
-INSERT INTO menu_items (name, description, price, category) VALUES
-('Маргарита', 'Томат, сыр', 500.00, 'pizza'),
-('Пепперони', 'Колбаса, сыр', 650.00, 'pizza'),
-('Цезарь', 'Курица, салат', 450.00, 'salad');
+INSERT INTO menu_items (name, description, price, category, image) VALUES
+('Маргарита', 'Томат, сыр', 500.00, 'pizza', 'Маргарита.jpg'),
+('Пепперони', 'Колбаса, сыр', 650.00, 'pizza', 'Пепперони.jpg'),
+('Цезарь', 'Курица, салат', 450.00, 'salad', 'Цезарь с курицей.jpg');
 
 
 -- =====================
